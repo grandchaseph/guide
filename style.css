@@ -2,9 +2,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #0b0b0b; /* Dark theme focus[cite: 1] */
+    background-color: #0b0b0b; 
     color: #ffffff;
-    font-family: 'Open Sans', sans-serif; /* PlayPark typography[cite: 1] */
+    font-family: 'Open Sans', sans-serif; 
     line-height: 1.6;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -22,25 +22,35 @@ body {
     100% { transform: translateY(0px); }
 }
 
+@keyframes light-slash {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+}
+
 .fade-in {
     animation: fadeInUp 1s ease-out forwards;
 }
 
-/* Staggered Floating logic for character cards */
-.interact-card {
-    animation: float 4s ease-in-out infinite;
-}
-
-.character-reveal-grid .compact-card:nth-child(2n) { animation-delay: 0.5s; }
-.character-reveal-grid .compact-card:nth-child(3n) { animation-delay: 1.2s; }
-
-/* --- HEADER & NAVIGATION --- */
 /* --- HEADER & NAVIGATION --- */
 header {
-    /* ... existing header styles ... */
+    background: rgba(11, 11, 11, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-/* --- LOGO & SUBTITLE STYLES (Paste the new code here) --- */
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
 .logo-link {
     display: flex;
     align-items: center;
@@ -56,32 +66,14 @@ header {
 
 .logo-subtitle {
     color: #ffffff;
-    font-family: 'Open Sans', sans-serif; /* PlayPark typography */
-    font-weight: 800; /* Bold style consistent with titles[cite: 1] */
+    font-weight: 800; 
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-left: 2px solid #cf2e2e; /* Iconic Red separator[cite: 1] */
+    border-left: 2px solid #cf2e2e; 
     padding-left: 12px;
     line-height: 1;
     transition: color 0.3s ease;
-}
-/* ... etc ... */
-
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo-text {
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: #cf2e2e;
-    letter-spacing: 2px;
 }
 
 .nav-menu {
@@ -101,178 +93,19 @@ header {
     transition: 0.3s;
 }
 
-.nav-menu a:hover { color: #cf2e2e; }
-
-/* --- BUTTONS --- */
-/* --- BUTTONS --- */
-/* --- SWORD ADVENTURE BUTTON --- */
-.sword-btn {
-    position: relative;
-    width: 320px; 
-    height: 100px; /* Increased height to ensure text has vertical room */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: visible; /* Changed to visible so shadows aren't cut off */
-    
-    /* Main Background: Your Sword Image */
-    background: url('sword.png') no-repeat center;
-    background-size: contain; 
-    border: none;
-    cursor: pointer;
-    
-    /* Smooth transition for the hover/click physics */
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
-    filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
+.nav-menu a:hover, .logo-link:hover .logo-subtitle { 
+    color: #cf2e2e; 
 }
 
-.btn-text {
-    z-index: 10; /* Ensures it is always in front of the sword and overlays */
-    position: relative;
-    font-weight: 800; /* Bold typography */
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    color: #ffffff;
-    text-transform: uppercase;
-    
-    /* High-contrast shadow to separate text from the sword image */
-    text-shadow: 
-        -1px -1px 0 #000,  
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000,
-         2px  2px 8px rgba(207, 46, 46, 0.8); /* Red glow outline[cite: 1] */
-    
-    pointer-events: none; /* Clicks go through the text directly to the sword */
-    white-space: nowrap;
-}
-
-/* --- INTERACTION ANIMATIONS --- */
-
-/* Hover: Scale up and tilt the sword */
-.sword-btn:hover {
-    transform: scale(1.1) rotate(-3deg); 
-    filter: drop-shadow(0 0 20px rgba(207, 46, 46, 1)); /* Iconic Red Accent[cite: 1] */
-}
-
-/* Active: Squeeze effect when clicking */
-.sword-btn:active {
-    transform: scale(0.9) rotate(2deg);
-    filter: brightness(1.2);
-}
-/* The Slash Animation Overlay */
-.sword-overlay {
-    position: absolute;
-    top: 50%;
-    left: -150%; 
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(
-        120deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.6), 
-        transparent
-    );
-    transform: translateY(-50%) skewX(-25deg);
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Trigger Light-Streak Slash on Hover */
-.sword-btn:hover .sword-overlay {
-    animation: light-slash 0.8s ease-in-out infinite;
-}
-
-@keyframes light-slash {
-    0% { left: -150%; }
-    50% { left: 150%; }
-    100% { left: 150%; }
-}
-
-/* --- HOVER ANIMATIONS --- */
-.sword-btn:hover {
-    transform: scale(1.05);
-    border-color: #fff;
-    box-shadow: 0 0 30px rgba(207, 46, 46, 0.8);
-}
-
-/* Trigger the Slash Animation on Hover */
-.sword-btn:hover .sword-overlay {
-    animation: slash 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-
-/* Background Zoom Effect */
-.sword-btn:hover {
-    background-size: 110%;
-}
-
-@keyframes slash {
-    0% {
-        left: -100px;
-        opacity: 0;
-    }
-    30% {
-        opacity: 1;
-    }
-    100% {
-        left: 120%; /* Slash across the button */
-        opacity: 0;
-    }
-}
-
-/* Subtle Glow Pulse for the button background */
-.sword-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle, rgba(207, 46, 46, 0.4) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    z-index: 1;
-}
-
-.sword-btn:hover::before {
-    opacity: 1;
-}
-
-/* Solid Buttons (Red) */
-.btn-play, .btn-card, .btn-small, .btn-card-small {
-    background: #cf2e2e;
-    color: white;
-    border: none;
-}
-
-/* Outline Button (Discord / Secondary) */
-.btn-outline {
-    background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    padding: 10px 25px;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-/* --- HOVER STATES --- */
-.btn-play:hover, .btn-card:hover, .btn-card-small:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(207, 46, 46, 0.6);
-    background: #ff3a3a;
-}
-
-.btn-outline:hover {
-    background: #ffffff;
-    color: #0b0b0b; /* Contrast text on white background */
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
 /* --- HERO SECTION --- */
 .hero {
-    height: 70vh;
+    height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070');
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('hero-bg.jpg'); /* Update to your background */
     background-size: cover;
     background-position: center;
 }
@@ -283,16 +116,73 @@ header {
     margin: 0;
     letter-spacing: 8px;
     text-shadow: 0 0 20px rgba(207, 46, 46, 0.8);
+    text-transform: uppercase;
 }
 
 .hero-desc {
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 20px auto 40px;
     color: #ccc;
 }
 
-/* --- CONTENT SECTIONS --- */
+/* --- SWORD ADVENTURE BUTTON --- */
+.sword-btn {
+    position: relative;
+    width: 320px; 
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    overflow: visible;
+    background: url('sword.png') no-repeat center;
+    background-size: contain; 
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
+}
+
+.btn-text {
+    z-index: 10;
+    position: relative;
+    font-weight: 800; 
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 8px rgba(207, 46, 46, 0.8);
+    pointer-events: none;
+}
+
+.sword-overlay {
+    position: absolute;
+    top: 50%;
+    left: -150%; 
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    transform: translateY(-50%) skewX(-25deg);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sword-btn:hover {
+    transform: scale(1.1) rotate(-3deg); 
+    filter: drop-shadow(0 0 20px rgba(207, 46, 46, 1));
+}
+
+.sword-btn:hover .sword-overlay {
+    animation: light-slash 0.8s ease-in-out infinite;
+}
+
+.sword-btn:active {
+    transform: scale(0.9) rotate(2deg);
+    filter: brightness(1.2);
+}
+
+/* --- CHARACTER REVEAL GRID --- */
 .content-section {
     padding: 100px 20px;
     max-width: 1100px;
@@ -305,9 +195,13 @@ header {
     font-weight: 800;
     margin-bottom: 60px;
     text-transform: uppercase;
+    border-bottom: 3px solid #cf2e2e;
+    display: inline-block;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
 }
 
-/* --- COMPACT CHARACTER REVEAL GRID --- */
 .character-reveal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -317,7 +211,7 @@ header {
 
 .compact-card {
     background: #1a1a1a;
-    height: 220px;
+    height: 240px;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #333;
@@ -327,8 +221,12 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: float 4s ease-in-out infinite;
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+.compact-card:nth-child(2n) { animation-delay: 0.5s; }
+.compact-card:nth-child(3n) { animation-delay: 1.2s; }
 
 .compact-card h3 {
     margin: 0;
@@ -340,7 +238,6 @@ header {
     z-index: 2;
 }
 
-/* Hidden Content Logic */
 .card-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -353,14 +250,6 @@ header {
     z-index: 2;
 }
 
-.card-reveal p {
-    font-size: 0.8rem;
-    color: #bbb;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-/* Hover Effects for Compact Cards */
 .compact-card:hover {
     border-color: #cf2e2e;
     background: #252525;
@@ -368,138 +257,14 @@ header {
 }
 
 .compact-card:hover h3 {
-    transform: translateY(-45px); /* Move name up */
+    transform: translateY(-45px); 
     color: #cf2e2e;
 }
 
 .compact-card:hover .card-reveal {
     opacity: 1;
-    transform: translateY(0); /* Slide content up */
+    transform: translateY(0);
 }
-
-/* Overlay effect to darken on hover */
-.compact-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.4);
-    opacity: 0;
-    transition: 0.3s;
-    z-index: 1;
-}
-
-.compact-card:hover::before {
-    opacity: 1;
-}
-
-.badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ffd700;
-    color: #000;
-    padding: 2px 10px;
-    font-size: 0.65rem;
-    font-weight: 800;
-    border-radius: 20px;
-    z-index: 3;
-}
-
-/* --- COMMUNITY HUB & FORMS --- */
-.community-container {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 40px;
-}
-
-.build-form, .achievement-wall {
-    background: #1a1a1a;
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #333;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 20px;
-    background: #0b0b0b;
-    border: 1px solid #444;
-    color: white;
-    border-radius: 6px;
-    font-family: inherit;
-}
-
-/* Dropdown styling (replaces the <style> tags you had) */
-.dropdown {
-    position: relative;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.dropdown-btn {
-    padding: 14px;
-    background: #0b0b0b;
-    border: 1px solid #444;
-    color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    text-align: left;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background: #1a1a1a;
-    border: 1px solid #444;
-    z-index: 10;
-}
-
-.dropdown:hover .dropdown-content { display: block; }
-
-.dropdown-content div {
-    padding: 10px;
-    cursor: pointer;
-    color: #fff;
-}
-
-.dropdown-content div:hover {
-    background: #cf2e2e;
-}
-
-/* --- ACHIEVEMENTS & TOAST --- */
-.achievement-item {
-    background: #252525;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-left: 5px solid #cf2e2e;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.95rem;
-}
-
-.user { color: #cf2e2e; font-weight: bold; }
-
-.toast {
-    position: fixed;
-    bottom: 30px;
-    right: -350px;
-    background: #1a1a1a;
-    border-left: 5px solid #ffd700;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-radius: 8px;
-    transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 2000;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-}
-
-.toast.show { right: 30px; }
 
 /* --- FOOTER --- */
 footer {
@@ -509,9 +274,9 @@ footer {
     border-top: 1px solid #222;
 }
 
-/* Responsive Fixes */
+/* Responsive */
 @media (max-width: 768px) {
-    .community-container { grid-template-columns: 1fr; }
     .main-logo { font-size: 2.5rem; }
     .nav-menu { display: none; }
+    .sword-btn { width: 260px; height: 80px; }
 }

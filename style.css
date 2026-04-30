@@ -173,6 +173,53 @@ header {
     text-align: center;
     position: relative;
     transition: border-color 0.3s, box-shadow 0.3s;
+    /* --- CARD HOVER EFFECT (INSERTED) --- */
+
+.card {
+    overflow: hidden;
+}
+
+/* Hide button initially */
+.card .btn-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.3s ease;
+}
+
+/* Dim text slightly on hover */
+.card:hover p {
+    opacity: 0.6;
+}
+
+/* Show button on hover */
+.card:hover .btn-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Dark overlay effect */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+/* Activate overlay */
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Keep content above overlay */
+.card h3,
+.card p,
+.card .btn-card,
+.card .badge {
+    position: relative;
+    z-index: 2;
+}
 }
 
 .card:hover {

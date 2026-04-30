@@ -3,89 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrandChase Guide | Bermesiah Adventures</title>
-    <!-- Font inspiration from PlayPark -->
+    <title>GrandChase Hub | Bermesiah Community</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Navigation -->
     <header>
         <nav class="nav-container">
+            <div class="logo-text">GC HUB</div>
             <ul class="nav-menu">
                 <li><a href="#">Home</a></li>
-                <li><a href="#characters">Characters</a></li>
-                <li><a href="#items">Items</a></li>
-                <li><a href="#dungeons">Dungeon Guide</a></li>
+                <li><a href="#characters">Chasers</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#dungeons">Guides</a></li>
             </ul>
+            <a href="#" class="btn-small">DOWNLOAD</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <h1 class="main-logo">GRAND CHASE</h1>
-            <p class="hero-desc">Explore the nostalgic realms of Bermesiah. Strategies, gear, and character builds in one place.[cite: 1]</p>
+            <p class="hero-desc">The chase is back! Join thousands of players in the ultimate Bermesiah guide.[cite: 1]</p>
             <div class="cta-buttons">
                 <a href="#dungeons" class="btn-play">START ADVENTURE</a>
+                <a href="#community" class="btn-outline">JOIN DISCORD</a>
             </div>
         </div>
     </section>
 
-    <!-- Character Section -->
+    <!-- Character Section with Hover Effects -->
     <section id="characters" class="content-section">
-        <h2 class="section-title">CHASERS</h2>
+        <h2 class="section-title">CHOOSE YOUR CHASER</h2>
         <div class="grid">
-            <div class="card">
+            <div class="card interact-card">
+                <div class="badge">S-Rank</div>
                 <h3>Elesis</h3>
                 <p>The Knight of Kanavan. High HP and powerful melee combos.</p>
+                <button class="btn-card">View Skills</button>
             </div>
-            <div class="card">
+            <div class="card interact-card">
+                <div class="badge">A-Rank</div>
                 <h3>Lire</h3>
                 <p>The Archer of Eryuell Island. Mastery of long-range combat.</p>
+                <button class="btn-card">View Skills</button>
             </div>
-            <div class="card">
+            <div class="card interact-card">
+                <div class="badge">S-Rank</div>
                 <h3>Arme</h3>
                 <p>The Mage of Serdin. Devastating area-of-effect spells.</p>
+                <button class="btn-card">View Skills</button>
             </div>
         </div>
     </section>
 
-    <!-- Items Section -->
-    <section id="items" class="content-section alternate-bg">
-        <h2 class="section-title">LEGENDARY GEAR</h2>
-        <table class="item-table">
-            <tr>
-                <th>Item Set</th>
-                <th>Drop Location</th>
-                <th>Bonus</th>
-            </tr>
-            <tr>
-                <td>Phantom Phoenix</td>
-                <td>Raid Dungeons</td>
-                <td>High Critical Chance</td>
-            </tr>
-            <tr>
-                <td>True Iron Dragon</td>
-                <td>Crafting</td>
-                <td>Ultimate Defense</td>
-            </tr>
-        </table>
-    </section>
+    <!-- NEW: Community Section -->
+    <section id="community" class="content-section alternate-bg">
+        <h2 class="section-title">COMMUNITY HUB</h2>
+        <div class="community-container">
+            <!-- Build Suggestion -->
+            <div class="build-form">
+                <h3>Suggest a Build</h3>
+                <input type="text" placeholder="Build Name (e.g., Full Crit Lire)">
+                <select>
+                    <option>Select Character</option>
+                    <option>Elesis</option>
+                    <option>Lire</option>
+                    <option>Arme</option>
+                </select>
+                <textarea placeholder="Describe the gear and cards..."></textarea>
+                <button class="btn-play">Submit Build</button>
+            </div>
 
-    <!-- Dungeon Section -->
-    <section id="dungeons" class="content-section">
-        <h2 class="section-title">DUNGEON GUIDES</h2>
-        <div class="guide-block">
-            <h3>Trial Forest</h3>
-            <p><strong>Difficulty:</strong> ★☆☆☆☆</p>
-            <p>The beginning of your journey. Watch out for the Ent's stomping attack.</p>
-        </div>
-        <div class="guide-block">
-            <h3>Sanctum of Destruction</h3>
-            <p><strong>Difficulty:</strong> ★★★★☆</p>
-            <p>Requires coordination. Keep your healers protected from the boss's laser sweep.</p>
+            <!-- Achievement Wall -->
+            <div class="achievement-wall">
+                <h3>Top Achievements</h3>
+                <div class="achievement-item">
+                    <span class="user">@ChaserZ</span>
+                    <span class="task">Cleared "Angry Ent" in 12s!</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="user">@KnightGM</span>
+                    <span class="task">Reached Level 85 with Elesis</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="user">@HealerPro</span>
+                    <span class="task">Completed Sanctum Solo</span>
+                </div>
+                <button class="btn-outline" style="width: 100%; margin-top: 10px;">Post Achievement</button>
+            </div>
         </div>
     </section>
 

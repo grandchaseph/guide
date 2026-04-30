@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GrandChase Hub | Bermesiah Community</title>
+    <!-- Font: Open Sans for that professional PlayPark look -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
         <nav class="nav-container">
             <div class="logo-text">GC HUB</div>
@@ -22,10 +24,11 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content fade-in">
             <h1 class="main-logo">GRAND CHASE</h1>
-            <p class="hero-desc">The chase is back! Join thousands of players in the ultimate Bermesiah guide.[cite: 1]</p>
+            <p class="hero-desc">The chase is back! Join thousands of players in the ultimate Bermesiah guide.</p>
             <div class="cta-buttons">
                 <a href="#dungeons" class="btn-play">START ADVENTURE</a>
                 <a href="#community" class="btn-outline">JOIN DISCORD</a>
@@ -33,7 +36,7 @@
         </div>
     </section>
 
-    <!-- Character Section with Hover Effects -->
+    <!-- Character Section -->
     <section id="characters" class="content-section">
         <h2 class="section-title">CHOOSE YOUR CHASER</h2>
         <div class="grid">
@@ -58,11 +61,11 @@
         </div>
     </section>
 
-    <!-- NEW: Community Section -->
+    <!-- Community Hub -->
     <section id="community" class="content-section alternate-bg">
         <h2 class="section-title">COMMUNITY HUB</h2>
         <div class="community-container">
-            <!-- Build Suggestion -->
+            <!-- Build Suggestion Form -->
             <div class="build-form">
                 <h3>Suggest a Build</h3>
                 <input type="text" placeholder="Build Name (e.g., Full Crit Lire)">
@@ -72,7 +75,7 @@
                     <option>Lire</option>
                     <option>Arme</option>
                 </select>
-                <textarea placeholder="Describe the gear and cards..."></textarea>
+                <textarea placeholder="Describe your gear, cards, and pet choice..."></textarea>
                 <button class="btn-play">Submit Build</button>
             </div>
 
@@ -96,9 +99,26 @@
         </div>
     </section>
 
+    <!-- Achievement Toast Notification -->
+    <div id="achievement-toast" class="toast">
+        <div class="toast-icon">🏆</div>
+        <div class="toast-text">
+            <strong>Chaser_Bot</strong> just unlocked <em>Legendary Hero</em>!
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 GrandChase Fan Project. Inspired by PlayPark GCC[cite: 1].</p>
+        <p>&copy; 2026 GrandChase Fan Project. Inspired by PlayPark GCC.[cite: 1]</p>
     </footer>
+
+    <!-- Small script to trigger the toast for testing -->
+    <script>
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('achievement-toast').classList.add('show');
+            }, 3000);
+        };
+    </script>
 
 </body>
 </html>

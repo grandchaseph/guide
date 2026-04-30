@@ -230,6 +230,78 @@ header {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
 }
+/* --- CHARACTER IMAGE BACKGROUNDS --- */
+.compact-card {
+    background-size: cover;
+    background-position: center top; /* Focuses on the character's face/upper body */
+    background-repeat: no-repeat;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Individual backgrounds - Update filenames to your actual images */
+/* Core Trio */
+.elesis-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('elesis.jpg'); }
+.lire-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lire.jpg'); }
+.arme-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('arme.jpg'); }
+
+/* Early Characters */
+.lass-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lass.jpg'); }
+.ryan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ryan.jpg'); }
+.ronan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ronan.jpg'); }
+
+/* Mid Generation */
+.amy-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('amy.jpg'); }
+.jin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('jin.jpg'); }
+.sieghart-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('sieghart.jpg'); }
+.mari-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('mari.jpg'); }
+
+/* Chaos Era */
+.dio-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('dio.jpg'); }
+.zero-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('zero.jpg'); }
+.ley-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ley.jpg'); }
+.rufus-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rufus.jpg'); }
+
+/* Late Characters */
+.rin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rin.jpg'); }
+.asin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('asin.jpg'); }
+.lime-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lime.jpg'); }
+.edel-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('edel.jpg'); }
+
+/* Final Additions */
+.veigas-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('veigas.jpg'); }
+.decanee-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('decanee.jpg'); }
+.ai-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ai.jpg'); }
+.kallia-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('kallia.jpg'); }
+.uno-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('uno.jpg'); }
+.iris-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('iris.jpg'); }
+/* ... continue for all 24 characters ... */
+
+/* --- HOVER EFFECT LOGIC --- */
+.compact-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(207, 46, 46, 0); /* Start transparent red */
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.compact-card:hover::before {
+    background: rgba(11, 11, 11, 0.85); /* Darkens background on hover to show text */
+}
+
+/* Ensure content stays above the hover overlay */
+.compact-card h3, .compact-card .card-reveal, .compact-card .badge {
+    z-index: 2;
+}
+
+/* Scale the background slightly on hover for a "zoom" effect */
+.compact-card:hover {
+    background-size: 110%; /* Slight zoom */
+    border-color: #cf2e2e;
+    transform: translateY(-10px);
+}
 
 .compact-card {
     background: #1a1a1a;

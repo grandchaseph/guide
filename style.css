@@ -81,61 +81,61 @@ header {
 
 /* --- BUTTONS --- */
 /* --- BUTTONS --- */
-.btn-play, .btn-card, .btn-small, .btn-card-small, .btn-outline {
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    text-decoration: none;
-    display: inline-block;
-    text-transform: uppercase;
-    font-family: 'Open Sans', sans-serif;
-}
-/* --- SWORD ADVENTURE BUTTON --- */
 /* --- SWORD ADVENTURE BUTTON --- */
 .sword-btn {
     position: relative;
-    width: 320px; /* Slightly wider to accommodate a sword shape */
-    height: 80px;
+    width: 320px; 
+    height: 100px; /* Increased height to ensure text has vertical room */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible; /* Changed to visible so shadows aren't cut off */
+    
     /* Main Background: Your Sword Image */
     background: url('sword.png') no-repeat center;
-    background-size: contain; /* Ensures the sword is fully visible as the button */
-    border: none; /* Removed border to let the sword shape shine */
+    background-size: contain; 
+    border: none;
     cursor: pointer;
+    
+    /* Smooth transition for the hover/click physics */
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
     filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
 }
 
 .btn-text {
-    z-index: 3;
+    z-index: 10; /* Ensures it is always in front of the sword and overlays */
     position: relative;
     font-weight: 800; /* Bold typography */
-    font-size: 1.1rem;
-    letter-spacing: 3px;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
     color: #ffffff;
     text-transform: uppercase;
-    text-shadow: 0 0 10px #000, 2px 2px 0px #cf2e2e; /* Red outline effect */
-    pointer-events: none; /* Let clicks pass through to the button */
+    
+    /* High-contrast shadow to separate text from the sword image */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000,
+         2px  2px 8px rgba(207, 46, 46, 0.8); /* Red glow outline[cite: 1] */
+    
+    pointer-events: none; /* Clicks go through the text directly to the sword */
+    white-space: nowrap;
 }
 
 /* --- INTERACTION ANIMATIONS --- */
 
-/* Hover: Sword Glow and Lift */
+/* Hover: Scale up and tilt the sword */
 .sword-btn:hover {
-    transform: scale(1.1) rotate(-2deg); /* Slight tilt for a dynamic feel */
-    filter: drop-shadow(0 0 15px rgba(207, 46, 46, 1)); /* PlayPark Red Glow[cite: 1] */
+    transform: scale(1.1) rotate(-3deg); 
+    filter: drop-shadow(0 0 20px rgba(207, 46, 46, 1)); /* Iconic Red Accent[cite: 1] */
 }
 
-/* Active: When the user clicks */
+/* Active: Squeeze effect when clicking */
 .sword-btn:active {
-    transform: scale(0.95) rotate(1deg); /* Recoil effect on click */
-    filter: brightness(1.5) drop-shadow(0 0 25px #fff);
+    transform: scale(0.9) rotate(2deg);
+    filter: brightness(1.2);
 }
-
 /* The Slash Animation Overlay */
 .sword-overlay {
     position: absolute;

@@ -80,28 +80,48 @@ header {
 .nav-menu a:hover { color: #cf2e2e; }
 
 /* --- BUTTONS --- */
+/* --- BUTTONS --- */
+.btn-play, .btn-card, .btn-small, .btn-card-small, .btn-outline {
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Solid Buttons (Red) */
 .btn-play, .btn-card, .btn-small, .btn-card-small {
     background: #cf2e2e;
     color: white;
     border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
-    text-decoration: none;
-    display: inline-block;
 }
 
-.btn-play { padding: 12px 30px; }
-.btn-small { padding: 8px 15px; font-size: 0.8rem; }
-.btn-card-small { padding: 6px 12px; font-size: 0.7rem; text-transform: uppercase; }
+/* Outline Button (Discord / Secondary) */
+.btn-outline {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
 
+/* --- HOVER STATES --- */
 .btn-play:hover, .btn-card:hover, .btn-card-small:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(207, 46, 46, 0.6);
     background: #ff3a3a;
 }
 
+.btn-outline:hover {
+    background: #ffffff;
+    color: #0b0b0b; /* Contrast text on white background */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
 /* --- HERO SECTION --- */
 .hero {
     height: 70vh;

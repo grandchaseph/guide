@@ -240,10 +240,12 @@ input {
 .dropdown-content div {
   padding: 8px;
   cursor: pointer;
+  color: #000; /* make text black */
 }
 
 .dropdown-content div:hover {
   background: #f0f0f0;
+  color: #000; /* ensure it stays black on hover */
 }
 </style>
 

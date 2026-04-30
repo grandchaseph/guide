@@ -91,6 +91,102 @@ header {
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
 }
+/* --- SWORD ADVENTURE BUTTON --- */
+.sword-btn {
+    position: relative;
+    width: 280px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(rgba(207, 46, 46, 0.4), rgba(0, 0, 0, 0.7)), 
+                url('your-photo.jpg'); /* Your uploaded photo here */
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #cf2e2e; /* PlayPark Red */
+    box-shadow: 0 0 15px rgba(207, 46, 46, 0.3);
+    transition: all 0.4s ease;
+}
+
+.btn-text {
+    z-index: 3;
+    position: relative;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* The Sword Overlay */
+.sword-overlay {
+    position: absolute;
+    top: 50%;
+    left: -100px; /* Start off-screen */
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    transform: translateY(-50%) rotate(-45deg);
+    z-index: 2;
+    opacity: 0;
+    transition: none;
+}
+
+/* Pseudo-element for the Sword 'Blade' shape */
+.sword-overlay::after {
+    content: '⚔'; /* Sword Unicode */
+    position: absolute;
+    top: -15px;
+    right: 0;
+    font-size: 2rem;
+    color: #fff;
+    filter: drop-shadow(0 0 10px #cf2e2e);
+}
+
+/* --- HOVER ANIMATIONS --- */
+.sword-btn:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+    box-shadow: 0 0 30px rgba(207, 46, 46, 0.8);
+}
+
+/* Trigger the Slash Animation on Hover */
+.sword-btn:hover .sword-overlay {
+    animation: slash 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Background Zoom Effect */
+.sword-btn:hover {
+    background-size: 110%;
+}
+
+@keyframes slash {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        left: 120%; /* Slash across the button */
+        opacity: 0;
+    }
+}
+
+/* Subtle Glow Pulse for the button background */
+.sword-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(207, 46, 46, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1;
+}
+
+.sword-btn:hover::before {
+    opacity: 1;
+}
 
 /* Solid Buttons (Red) */
 .btn-play, .btn-card, .btn-small, .btn-card-small {

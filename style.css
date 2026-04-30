@@ -92,54 +92,77 @@ header {
     font-family: 'Open Sans', sans-serif;
 }
 /* --- SWORD ADVENTURE BUTTON --- */
+/* --- SWORD ADVENTURE BUTTON --- */
 .sword-btn {
     position: relative;
-    width: 280px;
-    height: 60px;
+    width: 320px; /* Slightly wider to accommodate a sword shape */
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(rgba(207, 46, 46, 0.4), rgba(0, 0, 0, 0.7)), 
-                url('sword.png'); /* Your uploaded photo here */
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #cf2e2e; /* PlayPark Red */
-    box-shadow: 0 0 15px rgba(207, 46, 46, 0.3);
-    transition: all 0.4s ease;
+    /* Main Background: Your Sword Image */
+    background: url('sword.png') no-repeat center;
+    background-size: contain; /* Ensures the sword is fully visible as the button */
+    border: none; /* Removed border to let the sword shape shine */
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
 }
 
 .btn-text {
     z-index: 3;
     position: relative;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 800; /* Bold typography */
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #000, 2px 2px 0px #cf2e2e; /* Red outline effect */
+    pointer-events: none; /* Let clicks pass through to the button */
 }
 
-/* The Sword Overlay */
+/* --- INTERACTION ANIMATIONS --- */
+
+/* Hover: Sword Glow and Lift */
+.sword-btn:hover {
+    transform: scale(1.1) rotate(-2deg); /* Slight tilt for a dynamic feel */
+    filter: drop-shadow(0 0 15px rgba(207, 46, 46, 1)); /* PlayPark Red Glow[cite: 1] */
+}
+
+/* Active: When the user clicks */
+.sword-btn:active {
+    transform: scale(0.95) rotate(1deg); /* Recoil effect on click */
+    filter: brightness(1.5) drop-shadow(0 0 25px #fff);
+}
+
+/* The Slash Animation Overlay */
 .sword-overlay {
     position: absolute;
     top: 50%;
-    left: -100px; /* Start off-screen */
-    width: 150px;
-    height: 4px;
-    background: linear-gradient(90deg, transparent, #ffffff, transparent);
-    transform: translateY(-50%) rotate(-45deg);
+    left: -150%; 
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        120deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    );
+    transform: translateY(-50%) skewX(-25deg);
     z-index: 2;
-    opacity: 0;
-    transition: none;
+    pointer-events: none;
 }
 
-/* Pseudo-element for the Sword 'Blade' shape */
-.sword-overlay::after {
-    content: '⚔'; /* Sword Unicode */
-    position: absolute;
-    top: -15px;
-    right: 0;
-    font-size: 2rem;
-    color: #fff;
-    filter: drop-shadow(0 0 10px #cf2e2e);
+/* Trigger Light-Streak Slash on Hover */
+.sword-btn:hover .sword-overlay {
+    animation: light-slash 0.8s ease-in-out infinite;
+}
+
+@keyframes light-slash {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
 }
 
 /* --- HOVER ANIMATIONS --- */

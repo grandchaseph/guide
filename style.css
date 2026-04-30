@@ -210,6 +210,7 @@ header {
 }
 
 /* --- CHARACTER REVEAL GRID --- */
+/* --- CHARACTER REVEAL GRID --- */
 .content-section {
     padding: 80px 20px;
     max-width: 1100px;
@@ -275,7 +276,100 @@ header {
     border-radius: 4px;
 }
 
-/* --- TOAST --- */
+/* --- COMMUNITY HUB & FORMS --- */
+.community-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+.build-form, .achievement-wall {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+/* General form inputs */
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    background: #0b0b0b;
+    border: 1px solid #444;
+    color: white;
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* --- DROPDOWN INTERACTION --- */
+.dropdown {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dropdown-btn {
+    padding: 14px;
+    background: #0b0b0b;
+    border: 1px solid #444;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s ease;
+}
+
+.dropdown-content {
+    display: none; 
+    position: absolute;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    background: #1a1a1a;
+    border: 1px solid #cf2e2e;
+    z-index: 50; 
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropdown-btn {
+    border-color: #cf2e2e;
+}
+
+.dropdown-content div {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #ccc;
+    transition: all 0.2s ease;
+}
+
+.dropdown-content div:hover {
+    background: #cf2e2e;
+    color: #fff;
+    padding-left: 20px;
+}
+
+/* --- TOAST & ACHIEVEMENTS --- */
+.achievement-item {
+    background: #252525;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #cf2e2e;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.user { color: #cf2e2e; font-weight: bold; }
+
 .toast {
     position: fixed;
     bottom: 20px;

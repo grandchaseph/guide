@@ -638,16 +638,31 @@ header {
     text-align: center;
     padding: 10px;
 
-    /* 🔥 background image */
-    background-image: url('./elesis.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* 🔥 overlay for readability */
     position: relative;
 }
+.elesis-bg .card-reveal {
+    background-image: url('./elisis.png');
+}
 
+.lire-bg .card-reveal {
+    background-image: url('./lire.png');
+}
+
+.arme-bg .card-reveal {
+    background-image: url('./arme-reveal.jpg');
+}
+
+.lass-bg .card-reveal {
+    background-image: url('./lass-reveal.jpg');
+}
+
+.ryan-bg .card-reveal {
+    background-image: url('./ryan-reveal.jpg');
+}
+
+.ronan-bg .card-reveal {
+    background-image: url('./ronan-reveal.jpg');
+}
 /* dark overlay layer */
 .card-reveal::before {
     content: '';

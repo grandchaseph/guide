@@ -925,3 +925,115 @@ footer {
     color: #666;
 
 }
+/* ========================= */
+/* 📱 MOBILE RESPONSIVE FIX */
+/* ========================= */
+@media (max-width: 768px) {
+
+    /* NAVIGATION */
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 80px 20px;
+    }
+
+    .main-logo {
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .sword-btn {
+        width: 220px;
+        height: 70px;
+    }
+
+    .btn-text {
+        font-size: 0.9rem;
+    }
+
+    /* CHARACTER GRID */
+    .character-reveal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .compact-card {
+        height: 200px;
+    }
+
+    /* COMMUNITY SECTION */
+    .community-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .build-form, .achievement-wall {
+        padding: 20px;
+    }
+
+    /* SECTION SPACING */
+    .content-section {
+        padding: 50px 15px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ========================= */
+/* 💻 TABLET VIEW */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .main-logo {
+        font-size: 3.5rem;
+    }
+
+    .character-reveal-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .community-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ========================= */
+/* 🖥️ LARGE DESKTOP */
+/* ========================= */
+@media (min-width: 1200px) {
+
+    .nav-container {
+        max-width: 1300px;
+    }
+
+    .content-section {
+        max-width: 1300px;
+    }
+
+    .main-logo {
+        font-size: 5rem;
+    }
+
+    .character-reveal-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

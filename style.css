@@ -1,274 +1,927 @@
 /* --- BASE STYLES --- */
-* {
-    box-sizing: border-box; /* Ensures padding doesn't break widths */
-    margin: 0;
-    padding: 0;
-}
 
 body {
+
+    margin: 0;
+
+    padding: 0;
+
     background-color: #0b0b0b; 
+
     color: #ffffff;
+
     font-family: 'Open Sans', sans-serif; 
+
     line-height: 1.6;
+
     scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevents side-scrolling on mobile */
+
+    overflow-x: hidden;
+
 }
+
+
 
 /* --- ANIMATIONS --- */
+
 @keyframes fadeInUp {
+
     from { opacity: 0; transform: translateY(30px); }
+
     to { opacity: 1; transform: translateY(0); }
+
 }
+
+
 
 @keyframes float {
+
     0% { transform: translateY(0px); }
+
     50% { transform: translateY(-15px); }
+
     100% { transform: translateY(0px); }
+
 }
+
+
 
 @keyframes light-slash {
+
     0% { left: -150%; }
+
     50% { left: 150%; }
+
     100% { left: 150%; }
+
 }
+
+
 
 .fade-in {
+
     animation: fadeInUp 1s ease-out forwards;
+
 }
+
+
 
 /* --- HEADER & NAVIGATION --- */
+
 header {
+
     background: rgba(11, 11, 11, 0.95);
+
     backdrop-filter: blur(10px);
+
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
+
     border-bottom: 1px solid #222;
+
 }
+
+
 
 .nav-container {
+
     max-width: 1100px;
+
     margin: 0 auto;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 15px 20px;
+
 }
+
+
 
 .logo-link {
+
     display: flex;
+
     align-items: center;
+
     text-decoration: none;
+
     gap: 12px;
+
 }
+
+
 
 .nav-logo {
-    height: 40px; /* Slightly smaller for mobile */
+
+    height: 45px;
+
     width: auto;
+
     transition: transform 0.3s ease;
+
 }
+
+
 
 .logo-subtitle {
+
     color: #ffffff;
+
     font-weight: 800; 
-    font-size: 0.8rem;
+
+    font-size: 0.9rem;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
+
     border-left: 2px solid #cf2e2e; 
+
     padding-left: 12px;
+
     line-height: 1;
+
 }
+
+
 
 .nav-menu {
-    display: none; /* Hidden by default on mobile */
+
     list-style: none;
+
+    display: flex;
+
+    gap: 25px;
+
+    margin: 0;
+
+    padding: 0;
+
 }
+
+
+
+.nav-menu a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    font-size: 0.9rem;
+
+    transition: 0.3s;
+
+}
+
+
+
+.nav-menu a:hover, .logo-link:hover .logo-subtitle { 
+
+    color: #cf2e2e; 
+
+}
+
+
 
 /* --- HERO SECTION --- */
+
 .hero {
-    min-height: 70vh; /* Relative height for better mobile fit */
+
+    height: 80vh;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-align: center;
+
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('hero-bg.jpg');
+
     background-size: cover;
+
     background-position: center;
-    padding: 40px 20px;
+
 }
+
+
 
 .main-logo {
-    font-size: 2.5rem; /* Reduced for mobile screens */
+
+    font-size: 4.5rem;
+
     font-weight: 800;
+
     margin: 0;
-    letter-spacing: 4px;
+
+    letter-spacing: 8px;
+
     text-shadow: 0 0 20px rgba(207, 46, 46, 0.8);
+
     text-transform: uppercase;
+
 }
+
+
 
 .hero-desc {
-    font-size: 1rem;
+
+    font-size: 1.2rem;
+
     max-width: 600px;
+
     margin: 20px auto 40px;
+
     color: #ccc;
+
 }
+
+
 
 .cta-buttons {
+
     display: flex;
-    flex-direction: column; /* Stacked for mobile[cite: 1] */
+
+    flex-direction: column; /* Stacks sword button and Discord link */
+
     align-items: center;
+
     gap: 20px;
+
 }
+
+
 
 /* --- SWORD ADVENTURE BUTTON --- */
+
 .sword-btn {
+
     position: relative;
-    width: 280px; /* Narrower for mobile */
-    height: 80px; 
+
+    width: 320px; 
+
+    height: 100px; 
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     text-decoration: none;
+
     background: url('sword.png') no-repeat center;
+
     background-size: contain; 
+
     border: none;
+
     cursor: pointer;
+
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
     filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
+
 }
+
+
 
 .btn-text {
+
     z-index: 10;
+
     font-weight: 800; 
-    font-size: 1rem;
+
+    font-size: 1.2rem;
+
     color: #ffffff;
+
     text-transform: uppercase;
+
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 8px rgba(207, 46, 46, 0.8);
+
 }
+
+
+
+.sword-overlay {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: -150%; 
+
+    width: 200%;
+
+    height: 100%;
+
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+
+    transform: translateY(-50%) skewX(-25deg);
+
+    pointer-events: none;
+
+}
+
+
+
+.sword-btn:hover {
+
+    transform: scale(1.1) rotate(-3deg); 
+
+    filter: drop-shadow(0 0 20px rgba(207, 46, 46, 1));
+
+}
+
+
+
+.sword-btn:hover .sword-overlay {
+
+    animation: light-slash 0.8s ease-in-out infinite;
+
+}
+
+
+
+/* --- GENERAL BUTTONS --- */
+
+.btn-play, .btn-card-small {
+
+    background: #cf2e2e;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 30px;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+.btn-small { padding: 8px 20px; font-size: 0.8rem; }
+
+
+
+.btn-outline {
+
+    background: transparent;
+
+    border: 2px solid #ffffff;
+
+    color: #ffffff;
+
+    padding: 10px 25px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+
+}
+
+
+
+.btn-outline:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
 
 /* --- CHARACTER REVEAL GRID --- */
+
+/* --- CHARACTER REVEAL GRID --- */
+
 .content-section {
-    padding: 60px 20px;
+
+    padding: 80px 20px;
+
     max-width: 1100px;
+
     margin: 0 auto;
+
 }
+
+
 
 .section-title {
+
     text-align: center;
-    font-size: 2rem;
+
+    font-size: 2.5rem;
+
     font-weight: 800;
-    margin-bottom: 40px;
+
+    margin-bottom: 50px;
+
     text-transform: uppercase;
+
 }
+
+
 
 .character-reveal-grid {
+
     display: grid;
-    /* Automatically fits columns based on width[cite: 1] */
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
-    gap: 15px;
+
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+
+    gap: 20px;
+
 }
+
+/* --- CHARACTER IMAGE BACKGROUNDS --- */
 
 .compact-card {
-    background: #1a1a1a;
+
     background-size: cover;
-    background-position: center top;
-    height: 200px; /* Shorter cards for mobile */
-    border-radius: 12px;
-    border: 1px solid #333;
+
+    background-position: center top; /* Focuses on the character's face/upper body */
+
+    background-repeat: no-repeat;
+
     position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.4s;
+
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
 
-/* Character backgrounds apply here as per your original list */
+
+
+/* Individual backgrounds - Update filenames to your actual images */
+
+/* Core Trio */
+
 .elesis-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('elesis.jpg'); }
-/* ... other backgrounds remain same ... */
+
+.lire-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lire.jpg'); }
+
+.arme-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('arme.jpg'); }
+
+
+
+/* Early Characters */
+
+.lass-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lass.jpg'); }
+
+.ryan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ryan.jpg'); }
+
+.ronan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ronan.jpg'); }
+
+
+
+/* Mid Generation */
+
+.amy-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('amy.jpg'); }
+
+.jin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('jin.jpg'); }
+
+.sieghart-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('sieghart.jpg'); }
+
+.mari-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('mari.jpg'); }
+
+
+
+/* Chaos Era */
+
+.dio-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('dio.jpg'); }
+
+.zero-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('zero.jpg'); }
+
+.ley-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ley.jpg'); }
+
+.rufus-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rufus.jpg'); }
+
+
+
+/* Late Characters */
+
+.rin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rin.jpg'); }
+
+.asin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('asin.jpg'); }
+
+.lime-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lime.jpg'); }
+
+.edel-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('edel.jpg'); }
+
+
+
+/* Final Additions */
+
+.veigas-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('veigas.jpg'); }
+
+.decanee-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('decanee.jpg'); }
+
+.ai-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ai.jpg'); }
+
+.kallia-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('kallia.jpg'); }
+
+.uno-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('uno.jpg'); }
+
+.iris-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('iris.jpg'); }
+
+/* ... continue for all 24 characters ... */
+
+
+
+/* --- HOVER EFFECT LOGIC --- */
+
+.compact-card::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0; left: 0; width: 100%; height: 100%;
+
+    background: rgba(207, 46, 46, 0); /* Start transparent red */
+
+    transition: 0.3s;
+
+    z-index: 1;
+
+}
+
+
+
+.compact-card:hover::before {
+
+    background: rgba(11, 11, 11, 0.85); /* Darkens background on hover to show text */
+
+}
+
+
+
+/* Ensure content stays above the hover overlay */
+
+.compact-card h3, .compact-card .card-reveal, .compact-card .badge {
+
+    z-index: 2;
+
+}
+
+
+
+/* Scale the background slightly on hover for a "zoom" effect */
+
+.compact-card:hover {
+
+    background-size: 110%; /* Slight zoom */
+
+    border-color: #cf2e2e;
+
+    transform: translateY(-10px);
+
+}
+
+
+
+.compact-card {
+
+    background: #1a1a1a;
+
+    height: 240px;
+
+    border-radius: 12px;
+
+    border: 1px solid #333;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    animation: float 4s ease-in-out infinite;
+
+    transition: 0.4s;
+
+}
+
+
+
+.card-reveal {
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    transition: 0.4s;
+
+    text-align: center;
+
+    padding: 10px;
+
+}
+
+
+
+.compact-card:hover .card-reveal {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+
+
+.compact-card:hover h3 {
+
+    transform: translateY(-20px);
+
+    color: #cf2e2e;
+
+}
+
+
+
+.badge {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 10px;
+
+    background: #ffd700;
+
+    color: #000;
+
+    padding: 2px 8px;
+
+    font-weight: 800;
+
+    font-size: 0.7rem;
+
+    border-radius: 4px;
+
+}
+
+
 
 /* --- COMMUNITY HUB & FORMS --- */
+
 .community-container {
-    display: flex;
-    flex-direction: column; /* Stacked vertically for mobile[cite: 1] */
-    gap: 20px;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 40px;
+
 }
+
+
 
 .build-form, .achievement-wall {
+
     background: #1a1a1a;
-    padding: 25px;
+
+    padding: 40px;
+
     border-radius: 12px;
+
     border: 1px solid #333;
+
 }
 
-/* ----------------------------------------- */
-/* --- DESKTOP VIEW ADJUSTMENTS (min-width: 768px) --- */
-/* ----------------------------------------- */
-@media (min-width: 768px) {
-    
-    .nav-logo {
-        height: 45px;
-    }
 
-    .logo-subtitle {
-        font-size: 0.9rem;
-    }
 
-    .nav-menu {
-        display: flex; /* Show menu links on desktop[cite: 1] */
-        gap: 25px;
-    }
+/* General form inputs */
 
-    .main-logo {
-        font-size: 4.5rem; /* Large text for desktop[cite: 1] */
-        letter-spacing: 8px;
-    }
+input, textarea {
 
-    .hero-desc {
-        font-size: 1.2rem;
-    }
+    width: 100%;
 
-    .cta-buttons {
-        flex-direction: row; /* Buttons side-by-side[cite: 1] */
-        justify-content: center;
-    }
+    padding: 14px;
 
-    .sword-btn {
-        width: 320px;
-        height: 100px;
-    }
+    margin-bottom: 20px;
 
-    .btn-text {
-        font-size: 1.2rem;
-    }
+    background: #0b0b0b;
 
-    .section-title {
-        font-size: 2.5rem;
-    }
+    border: 1px solid #444;
 
-    .character-reveal-grid {
-        /* Force 4 columns on desktop as per layout preference[cite: 1] */
-        grid-template-columns: repeat(4, 1fr); 
-        gap: 20px;
-    }
+    color: white;
 
-    .compact-card {
-        height: 240px;
-    }
+    border-radius: 6px;
 
-    .community-container {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr; /* Side-by-side layout[cite: 1] */
-        gap: 40px;
-    }
+    font-family: inherit;
+
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+
 }
+
+
+
+/* --- DROPDOWN INTERACTION --- */
+
+.dropdown {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.dropdown-btn {
+
+    padding: 14px;
+
+    background: #0b0b0b;
+
+    border: 1px solid #444;
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    transition: border-color 0.3s ease;
+
+}
+
+
+
+.dropdown-content {
+
+    display: none; 
+
+    position: absolute;
+
+    width: 100%;
+
+    max-height: 250px;
+
+    overflow-y: auto;
+
+    background: #1a1a1a;
+
+    border: 1px solid #cf2e2e;
+
+    z-index: 50; 
+
+    border-radius: 0 0 6px 6px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+
+}
+
+
+
+.dropdown:hover .dropdown-content {
+
+    display: block;
+
+}
+
+
+
+.dropdown:hover .dropdown-btn {
+
+    border-color: #cf2e2e;
+
+}
+
+
+
+.dropdown-content div {
+
+    padding: 12px 15px;
+
+    cursor: pointer;
+
+    color: #ccc;
+
+    transition: all 0.2s ease;
+
+}
+
+
+
+.dropdown-content div:hover {
+
+    background: #cf2e2e;
+
+    color: #fff;
+
+    padding-left: 20px;
+
+}
+
+
+
+/* --- TOAST & ACHIEVEMENTS --- */
+
+.achievement-item {
+
+    background: #252525;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border-left: 5px solid #cf2e2e;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 0.95rem;
+
+}
+
+
+
+.user { color: #cf2e2e; font-weight: bold; }
+
+
+
+.toast {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: -400px;
+
+    background: #1a1a1a;
+
+    border-left: 4px solid #cf2e2e;
+
+    padding: 15px 25px;
+
+    transition: 0.5s;
+
+    z-index: 2000;
+
+}
+
+
+
+.toast.show { right: 20px; }
+
+
 
 /* --- FOOTER --- */
+
 footer {
+
     text-align: center;
+
     padding: 40px;
+
     border-top: 1px solid #222;
+
     color: #666;
-    font-size: 0.8rem;
+
 }

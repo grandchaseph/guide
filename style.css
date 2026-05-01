@@ -482,7 +482,7 @@ header {
 
 /* Core Trio */
 
-.elesis-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('elesis.png'); }
+.elesis-bg { background-image: url('elesis.png'); }
 
 .lire-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lire.jpg'); }
 

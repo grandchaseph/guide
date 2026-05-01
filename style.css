@@ -462,27 +462,22 @@ header {
 
 /* --- CHARACTER IMAGE BACKGROUNDS --- */
 
+/* --- CHARACTER IMAGE BACKGROUNDS --- */
 .compact-card {
-
     background-size: cover;
-
-    background-position: center top; /* Focuses on the character's face/upper body */
-
+    background-position: center top;
     background-repeat: no-repeat;
-
     position: relative;
-
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-
 }
 
-
-
-/* Individual backgrounds - Update filenames to your actual images */
-
-/* Core Trio */
-
-.elesis-bg { background-image: url('elesis.png'); }
+/* 🔥 ADD THIS HERE (RIGHT BELOW) */
+.elesis-bg {
+    background-image: url('./elesis.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .lire-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lire.jpg'); }
 

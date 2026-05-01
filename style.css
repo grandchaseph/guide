@@ -1,6 +1,6 @@
-/* --- BASE STYLES --- */
-
-/* --- BASE STYLES --- */
+/* ========================= */
+/* 🔥 BASE STYLES */
+/* ========================= */
 
 body {
     margin: 0;
@@ -13,623 +13,157 @@ body {
     overflow-x: hidden;
 }
 
-/* 🔥 LAYER FIX (ADD THIS HERE) */
+/* FIX LAYERS */
 header, .hero, .content-section, footer {
     position: relative;
     z-index: 2;
 }
 
-
-/* --- ANIMATIONS --- */
+/* ========================= */
+/* ✨ ANIMATIONS */
+/* ========================= */
 
 @keyframes fadeInUp {
-
     from { opacity: 0; transform: translateY(30px); }
-
     to { opacity: 1; transform: translateY(0); }
-
 }
-
-
 
 @keyframes float {
-
     0% { transform: translateY(0px); }
-
     50% { transform: translateY(-15px); }
-
     100% { transform: translateY(0px); }
-
 }
-
-
 
 @keyframes light-slash {
-
     0% { left: -150%; }
-
     50% { left: 150%; }
-
     100% { left: 150%; }
-
 }
 
-
-
-.fade-in {
-
-    animation: fadeInUp 1s ease-out forwards;
-
-}
-
-
-
-/* --- HEADER & NAVIGATION --- */
+/* ========================= */
+/* HEADER */
+/* ========================= */
 
 header {
-
     background: rgba(11, 11, 11, 0.95);
-
     backdrop-filter: blur(10px);
-
     position: sticky;
-
     top: 0;
-
     z-index: 1000;
-
     border-bottom: 1px solid #222;
-
 }
 
-
-
-.nav-container {
-
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 15px 20px;
-
-}
-
-
-
-.logo-link {
-
-    display: flex;
-
-    align-items: center;
-
-    text-decoration: none;
-
-    gap: 12px;
-
-}
-
-
-
-.nav-logo {
-
-    height: 45px;
-
-    width: auto;
-
-    transition: transform 0.3s ease;
-
-}
-
-
-
-.logo-subtitle {
-
-    color: #ffffff;
-
-    font-weight: 800; 
-
-    font-size: 0.9rem;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1px;
-
-    border-left: 2px solid #cf2e2e; 
-
-    padding-left: 12px;
-
-    line-height: 1;
-
-}
-
-
-
-.nav-menu {
-
-    list-style: none;
-
-    display: flex;
-
-    gap: 25px;
-
-    margin: 0;
-
-    padding: 0;
-
-}
-
-
-
-.nav-menu a {
-
-    color: #fff;
-
-    text-decoration: none;
-
-    font-weight: 600;
-
-    text-transform: uppercase;
-
-    font-size: 0.9rem;
-
-    transition: 0.3s;
-
-}
-
-
-
-.nav-menu a:hover, .logo-link:hover .logo-subtitle { 
-
-    color: #cf2e2e; 
-
-}
-
-
-
-/* --- HERO SECTION --- */
+/* ========================= */
+/* HERO */
+/* ========================= */
 
 .hero {
-
     height: 80vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
     background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('hero-bg.jpg');
-
     background-size: cover;
-
     background-position: center;
-
 }
 
-
-
-.main-logo {
-
-    font-size: 4.5rem;
-
-    font-weight: 800;
-
-    margin: 0;
-
-    letter-spacing: 8px;
-
-    text-shadow: 0 0 20px rgba(207, 46, 46, 0.8);
-
-    text-transform: uppercase;
-
-}
-
-
-
-.hero-desc {
-
-    font-size: 1.2rem;
-
-    max-width: 600px;
-
-    margin: 20px auto 40px;
-
-    color: #ccc;
-
-}
-
-
-
-.cta-buttons {
-
-    display: flex;
-
-    flex-direction: column; /* Stacks sword button and Discord link */
-
-    align-items: center;
-
-    gap: 20px;
-
-}
-
-
-
-/* --- SWORD ADVENTURE BUTTON --- */
-
-.sword-btn {
-
-    position: relative;
-
-    width: 320px; 
-
-    height: 100px; 
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-decoration: none;
-
-    background: url('sword.png') no-repeat center;
-
-    background-size: contain; 
-
-    border: none;
-
-    cursor: pointer;
-
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    filter: drop-shadow(0 0 5px rgba(207, 46, 46, 0.5));
-
-}
-
-
-
-.btn-text {
-
-    z-index: 10;
-
-    font-weight: 800; 
-
-    font-size: 1.2rem;
-
-    color: #ffffff;
-
-    text-transform: uppercase;
-
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 2px 2px 8px rgba(207, 46, 46, 0.8);
-
-}
-
-
-
-.sword-overlay {
-
-    position: absolute;
-
-    top: 50%;
-
-    left: -150%; 
-
-    width: 200%;
-
-    height: 100%;
-
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-
-    transform: translateY(-50%) skewX(-25deg);
-
-    pointer-events: none;
-
-}
-
-
-
-.sword-btn:hover {
-
-    transform: scale(1.1) rotate(-3deg); 
-
-    filter: drop-shadow(0 0 20px rgba(207, 46, 46, 1));
-
-}
-
-
-
-.sword-btn:hover .sword-overlay {
-
-    animation: light-slash 0.8s ease-in-out infinite;
-
-}
-
-
-
-/* --- GENERAL BUTTONS --- */
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
 
 .btn-play, .btn-card-small {
-
     background: #cf2e2e;
-
     color: white;
-
     border: none;
-
     padding: 12px 30px;
-
     text-transform: uppercase;
-
     font-weight: 700;
-
-    text-decoration: none;
-
     border-radius: 4px;
-
     cursor: pointer;
-
-    transition: 0.3s;
-
 }
 
-
-
-.btn-small { padding: 8px 20px; font-size: 0.8rem; }
-
-
-
-.btn-outline {
-
-    background: transparent;
-
-    border: 2px solid #ffffff;
-
-    color: #ffffff;
-
-    padding: 10px 25px;
-
-    text-decoration: none;
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    transition: 0.3s;
-
-}
-
-
-
-.btn-outline:hover {
-
-    background: white;
-
-    color: black;
-
-}
-
-
-
-/* --- CHARACTER REVEAL GRID --- */
-
-/* --- CHARACTER REVEAL GRID --- */
-
-.content-section {
-
-    padding: 80px 20px;
-
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-}
-
-
-
-.section-title {
-
-    text-align: center;
-
-    font-size: 2.5rem;
-
-    font-weight: 800;
-
-    margin-bottom: 50px;
-
-    text-transform: uppercase;
-
-}
-
-
-
-.character-reveal-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-
-    gap: 20px;
-
-}
-
-/* --- CHARACTER IMAGE BACKGROUNDS --- */
-
-/* --- CHARACTER IMAGE BACKGROUNDS --- */
-.compact-card {
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* 🔥 ADD THIS HERE (RIGHT BELOW) */
-.elesis-bg {
-    background-image: url('./elesis.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.lire-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lire.jpg'); }
-
-.arme-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('arme.jpg'); }
-
-
-
-/* Early Characters */
-
-.lass-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lass.jpg'); }
-
-.ryan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ryan.jpg'); }
-
-.ronan-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ronan.jpg'); }
-
-
-
-/* Mid Generation */
-
-.amy-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('amy.jpg'); }
-
-.jin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('jin.jpg'); }
-
-.sieghart-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('sieghart.jpg'); }
-
-.mari-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('mari.jpg'); }
-
-
-
-/* Chaos Era */
-
-.dio-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('dio.jpg'); }
-
-.zero-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('zero.jpg'); }
-
-.ley-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ley.jpg'); }
-
-.rufus-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rufus.jpg'); }
-
-
-
-/* Late Characters */
-
-.rin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('rin.jpg'); }
-
-.asin-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('asin.jpg'); }
-
-.lime-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('lime.jpg'); }
-
-.edel-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('edel.jpg'); }
-
-
-
-/* Final Additions */
-
-.veigas-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('veigas.jpg'); }
-
-.decanee-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('decanee.jpg'); }
-
-.ai-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('ai.jpg'); }
-
-.kallia-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('kallia.jpg'); }
-
-.uno-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('uno.jpg'); }
-
-.iris-bg { background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('iris.jpg'); }
-
-/* ... continue for all 24 characters ... */
-
-
-
-/* --- HOVER EFFECT LOGIC --- */
-
-.compact-card::before {
-
-    content: '';
-
-    position: absolute;
-
-    top: 0; left: 0; width: 100%; height: 100%;
-
-    background: rgba(207, 46, 46, 0); /* Start transparent red */
-
-    transition: 0.3s;
-
-    z-index: 1;
-
-}
-
-
-
-.compact-card:hover::before {
-
-    background: rgba(11, 11, 11, 0.85); /* Darkens background on hover to show text */
-
-}
-
-
-
-/* Ensure content stays above the hover overlay */
-
-.compact-card h3, .compact-card .card-reveal, .compact-card .badge {
-
-    z-index: 2;
-
-}
-
-
-
-/* Scale the background slightly on hover for a "zoom" effect */
-
-.compact-card:hover {
-
-    background-size: 110%; /* Slight zoom */
-
-    border-color: #cf2e2e;
-
-    transform: translateY(-10px);
-
-}
-
-
+/* ========================= */
+/* CHARACTER CARDS BASE */
+/* ========================= */
 
 .compact-card {
-
-    background: #1a1a1a;
-
-    height: 240px;
-
-    border-radius: 12px;
-
-    border: 1px solid #333;
-
     position: relative;
-
     overflow: hidden;
-
+    height: 240px;
+    border-radius: 12px;
+    border: 1px solid #333;
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     animation: float 4s ease-in-out infinite;
-
     transition: 0.4s;
 
+    background-color: #1a1a1a; /* FIX: do NOT use background: */
+    background-size: cover;
+    background-position: center;
 }
 
+/* ========================= */
+/* CHARACTER BACKGROUNDS */
+/* ========================= */
 
+.elesis-bg {
+    background-image: url('./elesis.png');
+}
+
+/* others (keep your gradient style if needed) */
+.lire-bg, .arme-bg, .lass-bg, .ryan-bg, .ronan-bg,
+.amy-bg, .jin-bg, .sieghart-bg, .mari-bg,
+.dio-bg, .zero-bg, .ley-bg, .rufus-bg,
+.rin-bg, .asin-bg, .lime-bg, .edel-bg,
+.veigas-bg, .decanee-bg, .ai-bg, .kallia-bg,
+.uno-bg, .iris-bg {
+    background-size: cover;
+    background-position: center;
+}
+
+/* ========================= */
+/* OVERLAY EFFECT */
+/* ========================= */
+
+.compact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 11, 11, 0);
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.compact-card:hover::before {
+    background: rgba(11, 11, 11, 0.85);
+}
+
+/* ========================= */
+/* TEXT LAYER FIX */
+/* ========================= */
+
+.compact-card h3,
+.compact-card .card-reveal,
+.compact-card .badge {
+    position: relative;
+    z-index: 2;
+}
+
+/* ========================= */
+/* HOVER EFFECT */
+/* ========================= */
+
+.compact-card:hover {
+    transform: translateY(-10px);
+    border-color: #cf2e2e;
+}
+
+/* ========================= */
+/* CARD REVEAL (FIXED) */
+/* ========================= */
 
 .card-reveal {
     opacity: 0;
@@ -637,310 +171,32 @@ header {
     transition: 0.4s;
     text-align: center;
     padding: 10px;
-
-    /* 🔥 background image */
-    background-image: url('./elesis.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* 🔥 overlay for readability */
-    position: relative;
 }
-
-/* dark overlay layer */
-.card-reveal::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 1;
-}
-
-/* keep text above overlay */
-.card-reveal > * {
-    position: relative;
-    z-index: 2;
-}
-
-
 
 .compact-card:hover .card-reveal {
-
     opacity: 1;
-
     transform: translateY(0);
-
 }
 
-
-
-.compact-card:hover h3 {
-
-    transform: translateY(-20px);
-
-    color: #cf2e2e;
-
-}
-
-
+/* ========================= */
+/* BADGE */
+/* ========================= */
 
 .badge {
-
     position: absolute;
-
     top: 10px;
-
     right: 10px;
-
     background: #ffd700;
-
     color: #000;
-
     padding: 2px 8px;
-
     font-weight: 800;
-
     font-size: 0.7rem;
-
     border-radius: 4px;
-
+    z-index: 3;
 }
 
-
-
-/* --- COMMUNITY HUB & FORMS --- */
-
-.community-container {
-
-    display: grid;
-
-    grid-template-columns: 1.5fr 1fr;
-
-    gap: 40px;
-
-}
-
-
-
-.build-form, .achievement-wall {
-
-    background: #1a1a1a;
-
-    padding: 40px;
-
-    border-radius: 12px;
-
-    border: 1px solid #333;
-
-}
-
-
-
-/* General form inputs */
-
-input, textarea {
-
-    width: 100%;
-
-    padding: 14px;
-
-    margin-bottom: 20px;
-
-    background: #0b0b0b;
-
-    border: 1px solid #444;
-
-    color: white;
-
-    border-radius: 6px;
-
-    font-family: inherit;
-
-    box-sizing: border-box; /* Ensures padding doesn't break width */
-
-}
-
-
-
-/* --- DROPDOWN INTERACTION --- */
-
-.dropdown {
-
-    position: relative;
-
-    width: 100%;
-
-    margin-bottom: 20px;
-
-}
-
-
-
-.dropdown-btn {
-
-    padding: 14px;
-
-    background: #0b0b0b;
-
-    border: 1px solid #444;
-
-    color: white;
-
-    cursor: pointer;
-
-    border-radius: 6px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    transition: border-color 0.3s ease;
-
-}
-
-
-
-.dropdown-content {
-
-    display: none; 
-
-    position: absolute;
-
-    width: 100%;
-
-    max-height: 250px;
-
-    overflow-y: auto;
-
-    background: #1a1a1a;
-
-    border: 1px solid #cf2e2e;
-
-    z-index: 50; 
-
-    border-radius: 0 0 6px 6px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-
-}
-
-
-
-.dropdown:hover .dropdown-content {
-
-    display: block;
-
-}
-
-
-
-.dropdown:hover .dropdown-btn {
-
-    border-color: #cf2e2e;
-
-}
-
-
-
-.dropdown-content div {
-
-    padding: 12px 15px;
-
-    cursor: pointer;
-
-    color: #ccc;
-
-    transition: all 0.2s ease;
-
-}
-
-
-
-.dropdown-content div:hover {
-
-    background: #cf2e2e;
-
-    color: #fff;
-
-    padding-left: 20px;
-
-}
-
-
-
-/* --- TOAST & ACHIEVEMENTS --- */
-
-.achievement-item {
-
-    background: #252525;
-
-    padding: 15px;
-
-    margin-bottom: 15px;
-
-    border-left: 5px solid #cf2e2e;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 0.95rem;
-
-}
-
-
-
-.user { color: #cf2e2e; font-weight: bold; }
-
-
-
-.toast {
-
-    position: fixed;
-
-    bottom: 20px;
-
-    right: -400px;
-
-    background: #1a1a1a;
-
-    border-left: 4px solid #cf2e2e;
-
-    padding: 15px 25px;
-
-    transition: 0.5s;
-
-    z-index: 2000;
-
-}
-
-
-
-.toast.show { right: 20px; }
-
-
-
-/* --- FOOTER --- */
-
-footer {
-
-    text-align: center;
-
-    padding: 40px;
-
-    border-top: 1px solid #222;
-
-    color: #666;
-
-}
 /* ========================= */
-/* 🔥 GLOBAL GLOW EFFECT */
+/* GLOBAL GLOW (FIXED LAYER) */
 /* ========================= */
 
 body::before {
@@ -953,127 +209,16 @@ body::before {
     background: radial-gradient(circle, rgba(207,46,46,0.15), transparent 70%);
     animation: rotateGlow 20s linear infinite;
     z-index: 0;
+    pointer-events: none;
 }
 
 @keyframes rotateGlow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-/* ========================= */
-/* 📱 MOBILE RESPONSIVE FIX */
-/* ========================= */
-@media (max-width: 768px) {
-
-    /* NAVIGATION */
-    .nav-container {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 15px;
-    }
-
-    .nav-menu {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-
-    /* HERO */
-    .hero {
-        height: auto;
-        padding: 80px 20px;
-    }
-
-    .main-logo {
-        font-size: 2.5rem;
-        letter-spacing: 3px;
-    }
-
-    .hero-desc {
-        font-size: 1rem;
-    }
-
-    .sword-btn {
-        width: 220px;
-        height: 70px;
-    }
-
-    .btn-text {
-        font-size: 0.9rem;
-    }
-
-    /* CHARACTER GRID */
-    .character-reveal-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .compact-card {
-        height: 200px;
-    }
-
-    /* COMMUNITY SECTION */
-    .community-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .build-form, .achievement-wall {
-        padding: 20px;
-    }
-
-    /* SECTION SPACING */
-    .content-section {
-        padding: 50px 15px;
-    }
-
-    .section-title {
-        font-size: 1.8rem;
-    }
-}
-
 
 /* ========================= */
-/* 💻 TABLET VIEW */
-/* ========================= */
-@media (min-width: 769px) and (max-width: 1024px) {
-
-    .main-logo {
-        font-size: 3.5rem;
-    }
-
-    .character-reveal-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .community-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* ========================= */
-/* 🖥️ LARGE DESKTOP */
-/* ========================= */
-@media (min-width: 1200px) {
-
-    .nav-container {
-        max-width: 1300px;
-    }
-
-    .content-section {
-        max-width: 1300px;
-    }
-
-    .main-logo {
-        font-size: 5rem;
-    }
-
-    .character-reveal-grid {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-/* ========================= */
-/* ✨ PARTICLE BACKGROUND */
+/* PARTICLES FIX */
 /* ========================= */
 
 .particles {
@@ -1082,34 +227,6 @@ body::before {
     height: 100%;
     top: 0;
     left: 0;
-    background: transparent;
-    overflow: hidden;
     z-index: 0;
-}
-
-/* individual particles */
-.particles span {
-    position: absolute;
-    display: block;
-    width: 4px;
-    height: 4px;
-    background: rgba(207, 46, 46, 0.7);
-    box-shadow: 0 0 10px rgba(207, 46, 46, 0.8);
-    border-radius: 50%;
-    animation: moveParticles linear infinite;
-}
-
-/* animation */
-@keyframes moveParticles {
-    from {
-        transform: translateY(100vh) scale(0.5);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-10vh) scale(1);
-        opacity: 0;
-    }
+    pointer-events: none;
 }

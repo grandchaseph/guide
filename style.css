@@ -1,25 +1,15 @@
 /* --- BASE STYLES --- */
 
 body {
-
     margin: 0;
-
     padding: 0;
-
-    background-color: #0b0b0b; 
-
+    background: linear-gradient(135deg, #0b0b0b 0%, #1a0000 50%, #000000 100%);
     color: #ffffff;
-
-    font-family: 'Open Sans', sans-serif; 
-
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-
     scroll-behavior: smooth;
-
     overflow-x: hidden;
-
 }
-
 
 
 /* --- ANIMATIONS --- */
